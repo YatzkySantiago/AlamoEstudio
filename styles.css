@@ -204,7 +204,7 @@ h1 em {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.2.5);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
     pointer-events: none;
 }
@@ -225,10 +225,6 @@ h1 em {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.placeholder-icon svg {
-    opacity: 0.35;
 }
 
 .placeholder-label {
@@ -734,3 +730,4 @@ footer {
         height: 50px;
     }
 }
+
