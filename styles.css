@@ -6,12 +6,13 @@
     --gray-light: #D6D6D0;
     --blue: #4A90C4;
     --blue-hover: #357aad;
-    --accent-line: #4A90C4;
     --wpp-green: #25D366;
     --wpp-hover: #228f4a;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -91,6 +92,7 @@ nav {
     background: var(--blue-hover) !important;
     color: white !important;
 }
+
 /* ── HERO ── */
 .hero {
     min-height: 100vh;
@@ -217,29 +219,11 @@ h1 em {
     min-height: 500px;
 }
 
-.placeholder-icon {
-    width: 64px;
-    height: 64px;
-    border: 2px solid var(--gray-light);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.placeholder-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gray-mid);
-    opacity: 0.6;
-}
-
 .hero-badge {
     position: absolute;
     bottom: 3rem;
-    left: -1.5rem;
-    background: white;
+    left: 1rem;
+    background: var(--white);
     padding: 1.2rem 1.6rem;
     border-left: 3px solid var(--blue);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -248,15 +232,14 @@ h1 em {
 }
 
 .hero-badge-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.5rem;
     color: var(--dark);
     line-height: 1;
 }
 
 .hero-badge-label {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--gray-mid);
     letter-spacing: 0.06em;
     margin-top: 0.3rem;
@@ -430,73 +413,32 @@ h3 {
     color: rgba(255, 255, 255, 0.45);
 }
 
-/* ── PORTFOLIO ── */
-.portfolio-grid {
+/* Beneficios */
+.features-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 4rem;
+    margin-top: 5rem;
 }
 
-.portfolio-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.portfolio-img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, #dde4ea 0%, #c8d4dd 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-}
-
-.portfolio-img.dark-ph {
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-}
-
-.portfolio-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(30, 30, 30, 0);
+.feature-item {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-end;
-    padding: 1.5rem;
-    transition: background 0.3s;
+    padding: 2rem;
+    background: var(--white);
+    border-left: 2px solid var(--blue);
 }
 
-.portfolio-card:hover .portfolio-overlay {
-    background: rgba(30, 30, 30, 0.75);
-}
-
-.portfolio-card:hover .portfolio-info {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.portfolio-info {
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.portfolio-info h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    color: white;
-    font-weight: 600;
-}
-
-.portfolio-info span {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+.feature-icon {
+    width: 24px;
+    height: 24px;
     color: var(--blue);
+    margin-bottom: 1.5rem;
+}
+
+.bottom-section {
+    border-bottom: 1.5px solid var(--gray-light);
 }
 
 /* ── CTA ── */
@@ -621,6 +563,7 @@ footer {
     opacity: 1;
     transform: none;
 }
+
 .whatsapp-btn {
     position: fixed;
     bottom: 30px;
@@ -633,7 +576,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     z-index: 1000;
 }
@@ -647,7 +590,7 @@ footer {
 .whatsapp-btn:hover {
     transform: translateY(-5px);
     background-color: var(--wpp-hover);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* ── RESPONSIVE ── */
@@ -696,10 +639,6 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-
     .cta-section {
         grid-template-columns: 1fr;
         padding: 4rem 1.5rem;
@@ -722,6 +661,7 @@ footer {
         justify-content: center;
     }
 }
+
 @media (max-width: 768px) {
     .whatsapp-btn {
         bottom: 20px;
@@ -729,5 +669,9 @@ footer {
         width: 50px;
         height: 50px;
     }
-}
 
+    .features-container {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+}
