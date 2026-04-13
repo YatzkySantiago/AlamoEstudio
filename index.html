@@ -168,7 +168,7 @@
             <p>Cada día que tu negocio no exista en internet, es una oportunidad que aprovecha otro. <br> Construir tu espacio digital hoy, es la mejor manera de asegurar que tu trabajo siga creciendo.</p>
         </div>
     </div>
-</section>
+    </section>
 
     <!-- CTA / CONTACTO -->
     <section class="cta-section" id="contacto">
@@ -176,7 +176,7 @@
             <div class="section-label">Contacto</div>
             <h2>¿Listo para hacer<br>crecer tu negocio?</h2>
             <p style="margin-top:1.2rem; color:var(--gray-mid); font-size:0.9rem; line-height:1.75;">
-                Llená el formulario o comunicate con nosotros por mail o WhatsApp.
+                Contanos sobre tu proyecto. Te respondemos en menos de 24 horas con una evaluación sin compromiso.
             </p>
             <div style="margin-top:2rem; display:flex; flex-direction:column; gap:0.7rem;">
                 <div style="font-size:0.8rem; color:var(--gray-mid)">📩 sy@alamoestudio.com</div>
@@ -184,15 +184,16 @@
                 <div style="font-size:0.8rem; color:var(--gray-mid)">📍 Patagonia, Argentina</div>
             </div>
         </div>
-        <div class="cta-right fade-up">
+        <form class="cta-right fade-up" name="contacto" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contacto"/>
             <div class="contact-row">
-                <input class="contact-input" type="text" placeholder="Nombre">
-                <input class="contact-input" type="email" placeholder="Email">
+                <input class="contact-input" type="text" name="nombre" placeholder="Nombre" required>
+                <input class="contact-input" type="email" name="email" placeholder="Email" required>
             </div>
-            <input class="contact-input" type="text" placeholder="¿En qué podemos ayudarte?" style="width:100%">
-            <textarea class="contact-textarea" placeholder="Contanos sobre tu negocio..."></textarea>
-            <button class="btn-primary" style="align-self:flex-start; padding: 0.9rem 2.5rem;">Enviar mensaje</button>
-        </div>
+            <input class="contact-input" type="text" name="asunto" placeholder="¿En qué podemos ayudarte?" style="width:100%">
+            <textarea class="contact-textarea" name="mensaje" placeholder="Contanos sobre tu negocio..."></textarea>
+            <button type="submit" class="btn-primary" style="align-self:flex-start; padding: 0.9rem 2.5rem;">Enviar mensaje</button>
+        </form>
     </section>
 
     <!-- FOOTER -->
