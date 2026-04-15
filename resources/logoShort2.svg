@@ -2,17 +2,22 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="21.023642"
-   height="30.595472"
-   viewBox="0 0 21.023642 30.595472"
+   width="36"
+   height="36"
+   viewBox="0 0 36.000001 36"
    version="1.1"
    id="svg1"
    xml:space="preserve"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"><defs
-     id="defs1" /><g
+     id="defs1" /><circle
+     style="fill:#ffffff;stroke-width:1.8"
+     id="path1"
+     cx="18"
+     cy="18"
+     r="18" /><g
      id="g1"
-     transform="matrix(1,0,0,0.71989348,-79.488178,-49.492677)"><path
+     transform="matrix(1,0,0,0.71989348,-72,-46.790413)"><path
        id="Layer copy 5"
        class="s0"
        d="m 79.916746,76.499993 h 1.142864 c 0.237136,0 0.428568,0.402501 0.428568,0.899999 V 102.6 c 0,0.4975 -0.191432,0.90001 -0.428568,0.90001 h -1.142864 c -0.237136,0 -0.428568,-0.40251 -0.428568,-0.90001 V 77.399993 c 0,-0.4975 0.191432,-0.899999 0.428568,-0.9 z"
