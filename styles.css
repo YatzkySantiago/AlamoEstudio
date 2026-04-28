@@ -51,6 +51,11 @@ body::before {
     z-index: 100;
     background: rgba(250, 251, 252, 0.8);
     backdrop-filter: blur(10px);
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+.header-scrolled {
+    background: rgba(250, 251, 252, 0.95) !important;
+    padding: 1rem 4rem; /* Opcional: puedes achicar el header al scrollear */
 }
 .logo-svg {
     height: 15px;
