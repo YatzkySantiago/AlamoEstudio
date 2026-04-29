@@ -306,7 +306,7 @@ section h2 {
     max-width: 80%;
 }
 .faq-item.active .faq-answer {
-    max-height: 200px;
+    max-height: 500px;
     opacity: 1;
     padding-bottom: 1rem;
 }
@@ -598,9 +598,6 @@ footer{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
-    }
-    .shape {
-        display: none;
     }
     .form{
         max-width: 100%;
