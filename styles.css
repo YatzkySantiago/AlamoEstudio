@@ -132,6 +132,23 @@ section h2 {
     color: var(--text-light);
     padding-bottom: 4rem;
 }
+.btn{
+    padding: 1rem 2.5rem;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+.btn:hover{
+    background: var(--blue-hover);
+    transform: translateY(-2px);
+}
 
 /* Servicios */
 .section-servicios {
@@ -354,24 +371,48 @@ section h2 {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    gap: 4rem; /* Espacio entre columna info y formulario */
 }
-.contenedor-contacto{
+.contenedor-contacto {
     display: flex;
-    flex-flow: column;
-    gap: 1em;
-    padding-bottom: 1em;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2.5rem; /* Separación entre bloques de texto y botón */
+    flex: 1;
 }
-.contenedor-contacto h2{
+.contacto-header h2 {
     max-width: 85%;
     padding: 0;
+    margin-bottom: 1rem;
 }
 .contacto-intro {
     font-size: 1.1rem;
     font-weight: 200;
+    line-height: 1.5;
+}
+.contacto-directo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 .contacto-info {
     font-size: 0.9rem;
     color: var(--text-light);
+}
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: fit-content;
+    background-color: var(--wpp-green) !important;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+.btn-whatsapp:hover {
+    background-color: var(--wpp-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
 }
 .form {
     display: flex;
@@ -432,23 +473,6 @@ section h2 {
     font-size: 0.8125rem;
     color: var(--text-light);
 }
-.btn{
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background: var(--primary);
-    color: var(--white);
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-}
-.btn:hover{
-    background: var(--blue-hover);
-}
 footer{
     background: var(--dark);
     padding: 3rem 4rem;
@@ -480,34 +504,6 @@ footer{
 .footer-copy{
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.2);
-}
-
-/* BOTON WHATSAPP */
-.whatsapp-btn{
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 55px;
-    height: 55px;
-    background-color: var(--wpp-green);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-.whatsapp-btn svg{
-    width: 30px;
-    height: 30px;
-    fill: currentColor;
-}
-.whatsapp-btn:hover{
-    transform: translateY(-5px);
-    background-color: var(--wpp-hover);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* CHECKMARK */
@@ -599,6 +595,9 @@ footer{
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
     }
+    .contenedor-contacto{
+        padding-bottom: 1em;
+    }
     .form{
         max-width: 100%;
     }
@@ -611,17 +610,5 @@ footer{
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
-    }
-}
-@media (max-width: 768px) {
-    .whatsapp-btn {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-    }
-    .features-container {
-        grid-template-columns: 1fr;
-        gap: 3.5rem;
     }
 }
