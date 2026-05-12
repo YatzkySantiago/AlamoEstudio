@@ -38,9 +38,8 @@ document.querySelectorAll('.servicio, .proceso-box, .faq-item, .contenedor-conta
 //Header Background on Scroll
 const header = document.querySelector('.header');
 window.addEventListener('scroll', () => {
-    // Usamos toggle con un booleano para mayor eficiencia
     header.classList.toggle('header-scrolled', window.scrollY > 50);
-}, { passive: true }); // 'passive' ayuda a que el scroll sea más fluido
+}, { passive: true });
 
 //Acordeon FAQ
 document.querySelectorAll('.faq-question').forEach(question => {
@@ -55,36 +54,36 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
-// Manejo del Formulario de Contacto (Netlify + Animación)
+// Manejo del Formulario de Contacto
 const contactForm = document.getElementById('contactForm');
 const mensajeExito = document.getElementById('mensaje-exito');
-
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault(); // Evita que Netlify recargue la página
-
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
         const formData = new FormData(contactForm);
-
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString(),
-        })
-            .then(() => {
-                // Animación de salida para el formulario
+        try {
+            const response = await fetch(contactForm.action, {
+                method: contactForm.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            if (response.ok) {
                 contactForm.style.transition = 'opacity 0.5s ease';
                 contactForm.style.opacity = '0';
-
                 setTimeout(() => {
-                    contactForm.style.display = 'none'; // Quitamos el formulario
-                    mensajeExito.style.display = 'flex'; // Mostramos el tilde verde
-
-                    // Hacemos scroll suave al mensaje por si quedó muy abajo
+                    contactForm.style.display = 'none';
+                    mensajeExito.style.display = 'flex';
                     mensajeExito.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 500);
-            })
-            .catch((error) => {
-                alert("Error al enviar: " + error);
-            });
+                contactForm.reset();
+            } else {
+                const data = await response.json();
+                alert(data.errors ? data.errors.map(err => err.message).join(", ") : "Error al enviar");
+            }
+        } catch (error) {
+            alert("Hubo un error de conexión: " + error.message);
+        }
     });
 }

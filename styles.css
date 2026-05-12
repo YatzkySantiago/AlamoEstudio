@@ -334,7 +334,6 @@ section h2 {
 .faq-item.active .faq-question h3 {
     color: var(--primary);
 }
-
 /* Trabajo */
 /* .trabajo-grid {
     display: grid;
@@ -363,7 +362,6 @@ section h2 {
     font-size: 0.8125rem;
     color: var(--text-light);
 } */
-
 /* CONTACTO */
 .contacto {
     background: var(--white);
@@ -371,14 +369,15 @@ section h2 {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    gap: 4rem; /* Espacio entre columna info y formulario */
 }
 .contenedor-contacto {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 2.5rem; /* Separación entre bloques de texto y botón */
+    justify-content: space-between;
+    gap: 2.5rem;
     flex: 1;
+    padding-right: 1rem;
+    border-right: 1px solid var(--primary);
 }
 .contacto-header h2 {
     max-width: 85%;
@@ -404,10 +403,10 @@ section h2 {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    width: fit-content;
     background-color: var(--wpp-green) !important;
     color: var(--white);
     transition: all 0.3s ease;
+    max-height: 48px;
 }
 .btn-whatsapp:hover {
     background-color: var(--wpp-hover) !important;
@@ -421,7 +420,7 @@ section h2 {
     width: 100%;
     max-width: 50%;
     padding-left: 1rem;
-    border-left: 2px solid var(--primary);
+    border-left: 1px solid var(--primary);
 }
 .form-group {
     position: relative;
@@ -516,6 +515,7 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-left: 1px solid var(--primary);
 }
 .checkmark-circle {
     width: 60px;
@@ -597,9 +597,18 @@ footer{
     }
     .contenedor-contacto{
         padding-bottom: 1em;
+        border: 0;
+        padding-right: 0;
+        border-bottom: 2px solid var(--primary);
     }
     .form{
+        padding-top: 1em;
         max-width: 100%;
+        padding-left: 0;
+        border: 0;
+    }
+    #mensaje-exito{
+        border-left: 0;
     }
     footer {
         flex-direction: column;
