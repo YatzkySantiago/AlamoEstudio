@@ -1,0 +1,75 @@
+.strip {
+  background: var(--dark);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  /* Altura fija y explícita para evitar que el marquee infle el contenedor */
+  height: 44px;
+}
+
+.strip::before,
+.strip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.strip::before {
+  left: 0;
+  background: linear-gradient(to right, var(--dark), transparent);
+}
+.strip::after {
+  right: 0;
+  background: linear-gradient(to left, var(--dark), transparent);
+}
+
+/* Wrapper que contiene DOS tracks (original + clon en JSX) para el loop */
+.trackWrapper {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+  will-change: transform;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(214, 214, 208, 0.55);
+  padding: 0 2rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.item:hover { color: var(--primary); }
+
+.dot {
+  width: 3px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

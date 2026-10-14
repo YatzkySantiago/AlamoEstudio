@@ -1,0 +1,134 @@
+.section {
+  padding: 8rem 4rem;
+  background: var(--bg);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.titleWrap {
+  max-width: 860px;
+  margin: 0 auto 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.titleVisible { opacity: 1; transform: translateY(0); }
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Item */
+.item {
+  border-bottom: 1px solid rgba(74,144,196,0.12);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.item.visible { opacity: 1; transform: translateY(0); }
+
+.item:first-child {
+  border-top: 1px solid rgba(74,144,196,0.12);
+}
+
+.question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--text);
+  transition: color 0.25s;
+}
+.item.open .question { color: var(--primary); }
+
+.qText {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(74,144,196,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  /* La rotación va en el wrapper del SVG, no en el item */
+  transition: background 0.25s, border-color 0.25s;
+}
+.iconOpen {
+  background: var(--primary-light);
+  border-color: rgba(74,144,196,0.45);
+}
+
+/* El SVG dentro rota */
+.icon svg {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+.iconOpen svg {
+  transform: rotate(45deg);
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s ease;
+  opacity: 0;
+}
+.item.open .answer {
+  max-height: 400px;
+  opacity: 1;
+}
+
+.answer p {
+  padding-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  max-width: 90%;
+}
+
+@media (max-width: 900px) {
+  .section { padding: 5rem 1.25rem; }
+  .answer p { max-width: 100%; }
+  .qText { font-size: 0.925rem; }
+}
