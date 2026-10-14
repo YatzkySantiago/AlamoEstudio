@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <script>
+        window.addEventListener('load', function () {
+            var fired = false;
+            function loadGTM() {
+                if (fired) return;
+                fired = true;
+                (function (w, d, s, l, i) {
+                    w[l] = w[l] || []; w[l].push({
+                        'gtm.start': new Date().getTime(), event: 'gtm.js'
+                    }); var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', 'GTM-M2RP25WL');
+            }
+            window.addEventListener('scroll', loadGTM, { passive: true });
+            window.addEventListener('mousemove', loadGTM, { passive: true });
+            window.addEventListener('touchstart', loadGTM, { passive: true });
+            setTimeout(loadGTM, 3500);
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álamo Estudio | Desarrollo Web & Google Ads</title>
+    <meta name="description"
+        content="Gestión de campañas en Google Ads y creación de sitios web que convierten visitantes en clientes reales. Hacé crecer tu negocio HOY!">
+    <link rel="shortcut icon" href="resources/logoShort2.svg" sizes="any" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="styles.css" as="style" fetchpriority="high">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap">
+    </noscript>
+    <script src="main.js" defer></script>
+</head>
+
+<body id="top">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2RP25WL" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Header -->
+    <header class="header">
+        <a href="#top"><img src="resources/LogoNewBlue.svg" alt="Álamo Estudio" class="logo-svg"></a>
+        <nav class="nav">
+            <a href="#servicios">Servicios</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contacto">
+                <div class="btn btn-nav">Contacto</div>
+            </a>
+        </nav>
+    </header>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hacé <span>crecer</span> tu negocio.</h1>
+            <p>Transformá tu presencia digital con <span>Álamo.</span></p>
+        </div>
+    </section>
+    <!-- Servicios -->
+    <section id="servicios" class="section-servicios">
+        <div class="contenedor-titulo-servicios">
+            <h2>Servicios que generan resultados.</h2>
+            <p class="subtitulo">
+                Cada servicio está diseñado para que tu negocio crezca de forma medible y sostenible.
+            </p>
+        </div>
+        <div class="servicios-grid">
+            <div class="servicio">
+                <span class="servicio-num">01</span>
+                <h3>Gestión de Google Ads</h3>
+                <p>Campañas de búsqueda y Performance Max, optimizadas para maximizar tu retorno. Estrategia, ejecución
+                    y reporte mensual.</p>
+            </div>
+            <div class="servicio">
+                <span class="servicio-num">02</span>
+                <h3>Desarrollo Web</h3>
+                <p>Páginas especialmente diseñadas para convertir el tráfico de tus anuncios en leads y ventas.
+                    Estructura orientada a UX y máxima velocidad de carga.</p>
+            </div>
+            <div class="servicio">
+                <span class="servicio-num">03</span>
+                <h3>Optimización</h3>
+                <p>Auditoría y mejora de sitios web para dominar los resultados de búsqueda. SEO on-page y cumplimiento
+                    de estándares Core Web Vitals.</p>
+            </div>
+        </div>
+    </section>
+    <!-- STRIP -->
+    <div class="strip">
+        <div class="strip-item"><span class="strip-dot"></span>Google Ads</div>
+        <div class="strip-item"><span class="strip-dot"></span>Diseño Web</div>
+        <div class="strip-item"><span class="strip-dot"></span>Landing Pages</div>
+        <div class="strip-item"><span class="strip-dot"></span>Analítica & Reportes</div>
+        <div class="strip-item"><span class="strip-dot"></span>SEO On-page</div>
+        <div class="strip-item"><span class="strip-dot"></span>Optimización de anuncios</div>
+        <div class="strip-item"><span class="strip-dot"></span>E-Commerce</div>
+    </div>
+    <!-- Proceso -->
+    <section id="proceso" class="section-proceso">
+        <div class="contenedor-titulo-servicios">
+            <h2>Un proceso claro y efectivo.</h2>
+        </div>
+        <div class="proceso-wrapper">
+            <div class="proceso-box">
+                <h3>Evaluación <span>•</span></h3>
+                <p>Analizamos tu negocio, tu competencia y el estado actual de tus campañas o sitio web.</p>
+            </div>
+            <div class="proceso-box">
+                <h3>Estrategia <span>••</span></h3>
+                <p>Diseñamos un plan de acción con objetivos concretos y metas de éxito definidas.</p>
+            </div>
+            <div class="proceso-box">
+                <h3>Ejecución <span>•••</span></h3>
+                <p>Implementamos, configuramos y lanzamos con atención al detalle en cada paso.</p>
+            </div>
+            <div class="proceso-box">
+                <h3>Optimización <span>••••</span></h3>
+                <p>Medimos, ajustamos y reportamos resultados de forma transparente cada mes.</p>
+            </div>
+        </div>
+    </section>
+    <section id="faq" class="section-faq">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Tengo que contratar todos los servicios juntos?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Para nada. Nuestros servicios son modulares. Podés empezar solo con el desarrollo de una web, o
+                        con la gestión de Google Ads, o combinar ambos según la etapa en la que se encuentre tu negocio.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Ustedes se encargan del diseño y la programación?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Nosotros ofrecemos una solución integral. Diseñamos la interfaz enfocada en la experiencia de
+                        usuario (UX) y luego la desarrollamos utilizando código limpio para garantizar la máxima
+                        velocidad de carga, sin embargo, el cliente puede estar tan involucrado como prefiera en el
+                        diseño.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Es necesario tener una página web previa para anunciar?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No es estrictamente necesario. Si no tenés una, podemos desarrollar una Landing Page optimizada
+                        específicamente para convertir el tráfico de tus anuncios en clientes potenciales.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Es muy caro anunciar en Google?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>En <span>Álamo</span> somos especialistas en trabajar con cualquier presupuesto. No se trata de
+                        cuánto invertís, sino de qué tan inteligente es la estrategia detrás. Google Ads nos permite
+                        empezar desde montos muy bajos y escalar. Nosotros nos encargamos de que cada peso de tu
+                        inversión esté optimizado para atraer clientes, haciendo que la publicidad sea un motor de
+                        crecimiento y no un gasto fijo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Trabajo -->
+    <!-- <section id="trabajo" class="trabajo">
+        <h2>Trabajo seleccionado</h2>
+        <div class="trabajo-grid">
+            <article class="proyecto">
+                <div class="proyecto-img"></div>
+                <h3>E-commerce Minimalista</h3>
+                <p>Desarrollo web</p>
+            </article>
+            <article class="proyecto">
+                <div class="proyecto-img"></div>
+                <h3>Campana SaaS B2B</h3>
+                <p>Google Ads</p>
+            </article>
+            <article class="proyecto">
+                <div class="proyecto-img"></div>
+                <h3>Portal Corporativo</h3>
+                <p>Desarrollo web</p>
+            </article>
+        </div>
+    </section> -->
+    <!-- Contacto -->
+    <section id="contacto" class="contacto">
+        <div class="contenedor-contacto">
+            <div class="contacto-header">
+                <h2>¿Listo para hacer <span>crecer</span> tu negocio?</h2>
+                <p class="contacto-intro">Contanos sobre tu proyecto. <br> Enviá el formulario o contactanos por
+                    WhatsApp.</p>
+            </div>
+            <div class="contacto-directo">
+                <p class="contacto-info">📩 sy<span>@</span>alamoestudio.com</p>
+                <p class="contacto-info">✅ +54 299 6746759</p>
+                <p class="contacto-info">📍 Patagonia - Argentina</p>
+            </div>
+            <a href="https://wa.me/542996746759" target="_blank" class="btn btn-whatsapp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                </svg>
+                Contactar por WhatsApp
+            </a>
+        </div>
+        <form class="form" id="contactForm" name="contacto" action="https://formspree.io/f/mykooqzv" method="POST">
+            <div class="form-group">
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="nombre">Nombre</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9+ ]{8,18}"
+                    title="Ingresá un número de teléfono válido (solo números, espacios o +)" required>
+                <label for="telefono">Número de teléfono</label>
+            </div>
+            <div class="form-group">
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                <label for="mensaje">Mensaje</label>
+            </div>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+        <div id="mensaje-exito">
+            <div class="checkmark-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <p>¡Mensaje enviado con éxito!</p>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <a href="#top"><img src="resources/LogoNewWhite.svg" alt="Álamo Estudio" class="logo-svg"></a>
+        </div>
+        <ul class="footer-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <span class="footer-copy">© 2026 Álamo Estudio</span>
+    </footer>
+</body>
+</html>
