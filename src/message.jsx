@@ -19,7 +19,7 @@ export const NEEDS = [
     label: 'App a medida',
     short: 'App',
     priceLabel: 'App a medida',
-    price: 'A presupuesto',
+    price: 'Solicitá una cotización',
     priceNote: 'Te pasamos un número según lo que necesites',
     ask: 'Quiero una app a medida',
     close: '.',

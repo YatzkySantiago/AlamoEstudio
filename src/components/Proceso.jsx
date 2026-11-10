@@ -1,7 +1,7 @@
 import styles from './Proceso.module.css';
 
 const PASOS = [
-  { titulo: 'Nos escribís', texto: 'Por WhatsApp nos contás a qué se dedica tu negocio y qué necesitás.' },
+  { titulo: 'Nos escribís', texto: 'Nos contás a qué se dedica tu negocio y qué necesitás.' },
   { titulo: 'Te pasamos el presupuesto', texto: 'Según la complejidad del proyecto, con el precio claro antes de empezar.' },
   { titulo: 'Diseñamos y programamos', texto: 'Nos encargamos de todo, y podés participar tanto como quieras.' },
   { titulo: 'Publicamos tu sitio', texto: 'Lo dejamos online, listo para que te encuentren.' },

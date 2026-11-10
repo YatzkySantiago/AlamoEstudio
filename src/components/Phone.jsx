@@ -51,16 +51,28 @@ export default function Phone() {
             <span className={styles.battery} />
           </div>
 
+          <div className={styles.notice}>
+            <span className={styles.noticeIcon}><WhatsAppIcon size={18} /></span>
+            <span className={styles.noticeBody}>
+              <span className={styles.noticeTop}>
+                <b>WhatsApp</b>
+                <span>ahora</span>
+              </span>
+              <span className={styles.noticeTitle}>Nueva consulta</span>
+              <span className={styles.noticeText}>Hola, vi la página. ¿Tienen turno esta semana?</span>
+            </span>
+          </div>
+
           <div className={styles.site}>
             <div className={styles.siteNav}>
               <span className={styles.siteLogo}>
                 <span className={styles.siteMark} />
-                Odontología Andina
+                Odontología
               </span>
               <Menu size={18} strokeWidth={2} />
             </div>
             <div className={styles.siteHero}>
-              <p className={styles.siteKicker}><MapPin size={13} strokeWidth={2.25} />Centro de Neuquén</p>
+              <p className={styles.siteKicker}><MapPin size={13} strokeWidth={2.25} />Neuquén</p>
               <p className={styles.siteTitle}>Turnos para toda la familia, sin esperas.</p>
               <span className={styles.siteButton}>
                 <WhatsAppIcon size={16} />
@@ -81,22 +93,11 @@ export default function Phone() {
             </div>
           </div>
 
-          <div className={styles.notice}>
-            <span className={styles.noticeIcon}><WhatsAppIcon size={18} /></span>
-            <span className={styles.noticeBody}>
-              <span className={styles.noticeTop}>
-                <b>WhatsApp</b>
-                <span>ahora</span>
-              </span>
-              <span className={styles.noticeTitle}>Nueva consulta</span>
-              <span className={styles.noticeText}>Hola, vi la página. ¿Tienen turno esta semana?</span>
-            </span>
-          </div>
         </div>
       </div>
 
       <figcaption className={styles.caption}>
-        Ejemplo de diseño para un consultorio. Las consultas llegan directo a WhatsApp.
+        (Ejemplo de diseño para un consultorio)
       </figcaption>
     </figure>
   );

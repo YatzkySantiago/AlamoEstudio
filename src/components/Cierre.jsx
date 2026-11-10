@@ -7,9 +7,8 @@ export default function Cierre() {
       <div className={styles.copy}>
         <h2 className={styles.title}>Armá tu mensaje y escribinos.</h2>
         <p className={styles.sub}>
-          Elegí qué necesitás, sumá tu negocio si querés, y se abre WhatsApp con todo listo para enviar.
+          Rellená el formulario y contactanos por whatsapp!
         </p>
-        <p className={styles.phone}>O escribinos directo al +54 299 674 6759</p>
       </div>
       <MessageBuilder />
     </section>

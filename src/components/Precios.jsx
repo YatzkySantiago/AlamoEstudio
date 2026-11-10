@@ -10,8 +10,8 @@ export default function Precios() {
   return (
     <section id="precios" className="section">
       <div className="sectionHead">
-        <h2>Cuánto sale.</h2>
-        <p>En pesos argentinos, antes de que tengas que preguntar.</p>
+        <h2>Cuánto sale?</h2>
+        <p>Valores de nuestros servicios.</p>
       </div>
 
       <div className={styles.grid}>
@@ -20,10 +20,10 @@ export default function Precios() {
           <p className={styles.desc}>Una página pensada para que tus clientes te encuentren y te escriban.</p>
 
           <p className={styles.price}>
-            <span className={styles.from}>desde</span>
+            <span className={styles.from}>A partir de:</span>
             $80.000
           </p>
-          <p className={styles.terms}>El precio final depende de la complejidad del proyecto.</p>
+          <p className={styles.terms}>Puede variar según la complejidad del proyecto.</p>
 
           <ul className={styles.list}>
             {INCLUYE.map((item) => (
@@ -36,10 +36,9 @@ export default function Precios() {
 
           <div className={styles.plan}>
             <div className={styles.planHead}>
-              <h4 className={styles.planName}>Plan mensual</h4>
+              <h4 className={styles.planName}>Mantenimiento mensual</h4>
               <p className={styles.planPrice}>{PLAN_MENSUAL}<span> por mes</span></p>
             </div>
-            <p className={styles.planTerms}>Viene con toda landing page e incluye:</p>
             <ul className={styles.planList}>
               {PLAN.map((item) => (
                 <li key={item}>

@@ -5,23 +5,27 @@ import styles from './FAQ.module.css';
 const PREGUNTAS = [
   {
     q: '¿Cuánto sale una landing page?',
-    a: 'Desde $80.000, más el plan mensual de $25.000. El precio final depende de la complejidad del proyecto, y por WhatsApp te pasamos el número exacto.',
+    a: 'Desde $80.000, y tienen un costo operativo y de mantenimiento mensual de $25.000. El precio final depende de la complejidad del proyecto.',
   },
   {
     q: '¿Qué incluye el plan mensual?',
-    a: 'El hosting, la gestión del dominio y hasta 2 modificaciones por mes. Viene con toda landing page y cuesta $25.000 por mes.',
+    a: 'El hosting, la gestión del dominio y hasta 2 modificaciones por mes.',
   },
   {
     q: '¿Ustedes se encargan del diseño y la programación?',
-    a: 'Sí, de las dos cosas. Diseñamos la página y después la programamos. Podés estar tan involucrado como prefieras.',
+    a: 'Diseñamos la página y después la programamos. Podés estar tan involucrado como prefieras.',
   },
   {
     q: '¿Necesito tener una página web previa?',
-    a: 'No. Si todavía no tenés ninguna, empezamos desde cero.',
+    a: 'No es necesario. Si todavía no tenés ninguna, empezamos desde cero.',
+  },
+  {
+    q: '¿Y si ya tengo una página web?',
+    a: 'En ese caso podemos hacer un diagnostico de la misma, optimizarla y modernizarla!',
   },
   {
     q: '¿Qué incluye el SEO básico?',
-    a: 'Dejamos la página preparada para que los buscadores la entiendan, y hecha para que cargue rápido. Viene incluido en toda landing page.',
+    a: 'Dejamos la página preparada para que los buscadores la entiendan, siguiendo los mas altos estándares de velocidad.',
   },
   {
     q: '¿Qué es una app a medida?',
