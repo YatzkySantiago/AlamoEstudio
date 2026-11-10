@@ -1,104 +1,92 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import { WA_MESSAGES, WhatsAppIcon, waLink } from '../whatsapp';
 import styles from './Header.module.css';
 
-const navLinks = [
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#proceso', label: 'Proceso' },
-  { href: '#faq', label: 'FAQ' },
+const LINKS = [
+  { href: '#trabajos', label: 'Trabajos' },
+  { href: '#precios', label: 'Precios' },
+  { href: '#proceso', label: 'Cómo trabajamos' },
+  { href: '#preguntas', label: 'Preguntas' },
 ];
 
-function scrollTo(href) {
-  if (href === '#top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
-  const target = document.querySelector(href);
-  if (!target) return;
-  const top = target.getBoundingClientRect().top + window.scrollY - 72;
-  window.scrollTo({ top, behavior: 'smooth' });
-}
-
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState('');
+  const toggleRef = useRef(null);
 
-  // Header shrink on scroll
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    const sections = LINKS.map(({ href }) => document.querySelector(href)).filter(Boolean);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+          else if (`#${entry.target.id}` === active) setActive('');
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [active]);
 
-  // Bloquear scroll del body cuando el menú mobile está abierto
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [menuOpen]);
-
-  // Cerrar menú con Escape
-  useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape') setMenuOpen(false); };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, []);
-
-  const handleNav = (e, href) => {
-    e.preventDefault();
-    setMenuOpen(false);
-    setTimeout(() => scrollTo(href), menuOpen ? 350 : 0);
-  };
+    if (!open) return undefined;
+    const onKey = (event) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [open]);
 
   return (
-    <>
-      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-        {/* Logo */}
-        <a href="#top" onClick={(e) => handleNav(e, '#top')} className={styles.logoLink}>
-          <img src="/LogoNewBlue.svg" alt="Álamo Estudio" className={styles.logo} />
+    <header className={styles.header}>
+      <div className={styles.inner}>
+        <a href="#inicio" className={styles.logoLink} onClick={() => setOpen(false)}>
+          <img src="/LogoNewBlue.svg" alt="Álamo Estudio" width="150" height="20" />
         </a>
 
-        {/* Nav desktop */}
-        <nav className={styles.navDesktop}>
-          {navLinks.map(({ href, label }) => (
-            <a key={href} href={href} className={styles.navLink} onClick={(e) => handleNav(e, href)}>
+        <nav className={styles.nav} aria-label="Principal">
+          {LINKS.map(({ href, label }) => (
+            <a key={href} href={href} className={styles.link} aria-current={active === href ? 'true' : undefined}>
               {label}
             </a>
           ))}
-          <a href="#contacto" onClick={(e) => handleNav(e, '#contacto')} className={styles.navCta}>
-            Contacto
-          </a>
         </nav>
 
-        {/* Burger */}
-        <button
-          className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ''}`}
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-          aria-expanded={menuOpen}
-        >
-          <span /><span /><span />
-        </button>
-      </header>
-
-      {/* Overlay mobile */}
-      <div
-        className={`${styles.overlay} ${menuOpen ? styles.overlayOpen : ''}`}
-        onClick={() => setMenuOpen(false)}
-        aria-hidden="true"
-      />
-
-      {/* Nav mobile — fuera del header para evitar stacking context */}
-      <nav className={`${styles.navMobile} ${menuOpen ? styles.navMobileOpen : ''}`} aria-hidden={!menuOpen}>
-        <div className={styles.mobileLogoWrap}>
-          <img src="/LogoNewBlue.svg" alt="Álamo Estudio" className={styles.mobileLogo} />
+        <div className={styles.actions}>
+          <a className={`btn btnWa ${styles.cta}`} href={waLink(WA_MESSAGES.general)} target="_blank" rel="noopener noreferrer">
+            <WhatsAppIcon size={18} />
+            WhatsApp
+          </a>
+          <button
+            ref={toggleRef}
+            type="button"
+            className={styles.toggle}
+            aria-expanded={open}
+            aria-controls="menu-movil"
+            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X size={24} strokeWidth={1.75} /> : <Menu size={24} strokeWidth={1.75} />}
+          </button>
         </div>
-        <div className={styles.mobileLinks}>
-          {navLinks.map(({ href, label }) => (
-            <a key={href} href={href} className={styles.mobileLink} onClick={(e) => handleNav(e, href)} tabIndex={menuOpen ? 0 : -1}>
-              {label}
-            </a>
-          ))}
-        </div>
-        <a href="#contacto" onClick={(e) => handleNav(e, '#contacto')} className={styles.mobileCta} tabIndex={menuOpen ? 0 : -1}>
-          Contacto
-        </a>
+      </div>
+
+      <nav id="menu-movil" className={`${styles.sheet} ${open ? styles.sheetOpen : ''}`} aria-label="Menú" inert={!open}>
+        {LINKS.map(({ href, label }) => (
+          <a key={href} href={href} className={styles.sheetLink} onClick={() => setOpen(false)}>
+            {label}
+          </a>
+        ))}
       </nav>
-    </>
+    </header>
   );
 }

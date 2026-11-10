@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "src/components/MessageBuilder.module.css"
+        ],
+        "createdAt": "2026-11-10T17:56:14.576Z",
+        "reason": "agent: the only match is the CSS triangle forming the WhatsApp bubble tail, not a card border"
+      }
+    ]
+  }
+}

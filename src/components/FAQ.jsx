@@ -1,69 +1,67 @@
-import { useState } from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useId, useState } from 'react';
+import { Plus } from 'lucide-react';
 import styles from './FAQ.module.css';
 
-const faqs = [
+const PREGUNTAS = [
   {
-    q: '¿Tengo que contratar todos los servicios juntos?',
-    a: 'Para nada. Nuestros servicios son modulares. Podés empezar solo con el desarrollo de una web, o con la gestión de Google Ads, o combinar ambos según la etapa en la que se encuentre tu negocio.',
+    q: '¿Cuánto sale una landing page?',
+    a: 'Desde $80.000, más el plan mensual de $25.000. El precio final depende de la complejidad del proyecto, y por WhatsApp te pasamos el número exacto.',
+  },
+  {
+    q: '¿Qué incluye el plan mensual?',
+    a: 'El hosting, la gestión del dominio y hasta 2 modificaciones por mes. Viene con toda landing page y cuesta $25.000 por mes.',
   },
   {
     q: '¿Ustedes se encargan del diseño y la programación?',
-    a: 'Sí, ofrecemos una solución integral. Diseñamos la interfaz enfocada en la experiencia de usuario (UX) y luego la desarrollamos con código limpio para garantizar la máxima velocidad. El cliente puede estar tan involucrado como prefiera en el proceso de diseño.',
+    a: 'Sí, de las dos cosas. Diseñamos la página y después la programamos. Podés estar tan involucrado como prefieras.',
   },
   {
-    q: '¿Es necesario tener una página web previa para anunciar?',
-    a: 'No es estrictamente necesario. Si no tenés una, podemos desarrollar una Landing Page optimizada específicamente para convertir el tráfico de tus anuncios en clientes potenciales.',
+    q: '¿Necesito tener una página web previa?',
+    a: 'No. Si todavía no tenés ninguna, empezamos desde cero.',
   },
   {
-    q: '¿Es muy caro anunciar en Google?',
-    a: 'En Álamo somos especialistas en trabajar con cualquier presupuesto. No se trata de cuánto invertís, sino de qué tan inteligente es la estrategia detrás. Google Ads nos permite empezar desde montos muy bajos y escalar. Nosotros nos encargamos de que cada peso de tu inversión esté optimizado para atraer clientes.',
+    q: '¿Qué incluye el SEO básico?',
+    a: 'Dejamos la página preparada para que los buscadores la entiendan, y hecha para que cargue rápido. Viene incluido en toda landing page.',
   },
   {
-    q: '¿Cuánto tiempo tarda en ver resultados?',
-    a: 'Con Google Ads los resultados son prácticamente inmediatos, ya que comenzás a aparecer en búsquedas desde el primer día. En desarrollo web, el tiempo varía según la complejidad del proyecto, pero típicamente entre 2 y 6 semanas.',
+    q: '¿Qué es una app a medida?',
+    a: 'Un desarrollo pensado para algo puntual de tu negocio que una página no resuelve. Contanos la idea y te pasamos un presupuesto.',
   },
 ];
 
-function FAQItem({ faq, index }) {
-  const [open, setOpen] = useState(false);
-  const { ref, isVisible } = useScrollAnimation();
-
+function Item({ item, open, onToggle }) {
+  const id = useId();
   return (
-    <div
-      ref={ref}
-      className={`${styles.item} ${open ? styles.open : ''} ${isVisible ? styles.visible : ''}`}
-      style={{ transitionDelay: `${index * 80}ms` }}
-    >
-      <button className={styles.question} onClick={() => setOpen(!open)} aria-expanded={open}>
-        <span className={styles.qText}>{faq.q}</span>
-        <span className={`${styles.icon} ${open ? styles.iconOpen : ''}`}>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            <line x1="7" y1="0" x2="7" y2="14" />
-            <line x1="0" y1="7" x2="14" y2="7" />
-          </svg>
-        </span>
-      </button>
-      <div className={styles.answer}>
-        <p>{faq.a}</p>
+    <div className={styles.item} data-open={open || undefined}>
+      <h3>
+        <button type="button" className={styles.question} aria-expanded={open} aria-controls={id} onClick={onToggle}>
+          {item.q}
+          <Plus className={styles.icon} size={22} strokeWidth={1.75} aria-hidden="true" />
+        </button>
+      </h3>
+      <div id={id} className={styles.answer}>
+        <div>
+          <p>{item.a}</p>
+        </div>
       </div>
     </div>
   );
 }
 
 export default function FAQ() {
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className={styles.section}>
-      <div ref={titleRef} className={`${styles.titleWrap} ${titleVisible ? styles.titleVisible : ''}`}>
-        <span className={styles.label}>FAQ</span>
-        <h2 className={styles.title}>Preguntas Frecuentes</h2>
-      </div>
-
+    <section id="preguntas" className={`section ${styles.section}`}>
+      <h2 className={styles.heading}>Preguntas frecuentes.</h2>
       <div className={styles.list}>
-        {faqs.map((faq, i) => (
-          <FAQItem key={i} faq={faq} index={i} />
+        {PREGUNTAS.map((item, index) => (
+          <Item
+            key={item.q}
+            item={item}
+            open={openIndex === index}
+            onToggle={() => setOpenIndex(openIndex === index ? -1 : index)}
+          />
         ))}
       </div>
     </section>
