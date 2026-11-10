@@ -73,10 +73,10 @@ export default function Phone() {
             </div>
             <div className={styles.siteHero}>
               <p className={styles.siteKicker}><MapPin size={13} strokeWidth={2.25} />Neuquén</p>
-              <p className={styles.siteTitle}>Turnos para toda la familia, sin esperas.</p>
+              <p className={styles.siteTitle}>Solicitá un turno.</p>
               <span className={styles.siteButton}>
                 <WhatsAppIcon size={16} />
-                Pedir turno por WhatsApp
+                Contactar por whatsapp
               </span>
             </div>
             <div className={styles.siteBody}>
