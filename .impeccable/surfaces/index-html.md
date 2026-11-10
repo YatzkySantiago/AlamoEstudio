@@ -11,14 +11,14 @@ Unresolved: what a landing includes at the starting price beyond SEO básico and
 
 ## Direction contract
 
-THESIS: A clean, light studio page at Cal.com's craft that shows the product doing its job: a phone with an example client landing receiving a WhatsApp inquiry, and a closing band where the visitor builds and sends their own message. It refuses blobs, rotating words, badges and unsupported claims.
+THESIS: A clean, light studio page at Cal.com's craft whose hero shows the outcome: a simple looping stack of alerts (consultas, ventas, reservas) beside a plain offer, and a closing band where the visitor builds and sends their own message. It refuses blobs, rotating headline words, badges, unsupported claims and anything in example content that resembles a real control.
 
 OWN-WORLD: Cool pale ground, white surfaces with hairline rings, near-black ink, page-long hairline rails, one grotesque family, logo blue for small accents, WhatsApp green reserved for the main action, real WhatsApp bubble colours in the preview.
 
 STORY: The visitor understands what is sold and who it is for, sees the price, believes the studio is direct, and sends a prefilled WhatsApp message.
 
-FIRST VIEWPORT: Sticky header. Left: three-line headline at about 80px, one lead line, a 60px green WhatsApp button beside a quiet Ver precios button, and the price line (desde $80.000 + $25.000 por mes). Right: a phone showing an example dental-clinic landing with a WhatsApp notification sliding up, captioned as an example.
+FIRST VIEWPORT: Sticky header. Left: headline at about 80px, one lead line, a 60px green WhatsApp button beside a quiet Ver precios button, and the price line. Right: three stacked alert cards cycling every 2.8s, captioned as examples, with no buttons and no green.
 
-FORM: Category standard, standing exit taken by the user; seed:2a802ebdf7befef4. Signature interaction: the closing band's message builder rewrites its WhatsApp bubble live as the visitor chooses; in the hero, the phone tilts toward the pointer and the inquiry notification arrives once.
+FORM: Category standard, standing exit taken by the user; seed:2a802ebdf7befef4. Signature interaction: the alert stack loops, pausing on hover and static under reduced motion; the closing band's message builder rewrites its WhatsApp bubble live as the visitor chooses.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
