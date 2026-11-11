@@ -95,7 +95,6 @@ export default function MessageBuilder() {
           <WhatsAppIcon size={22} />
           Enviar por WhatsApp
         </a>
-        <p className={styles.note}>Se abre WhatsApp con este mensaje, y lo podés cambiar antes de enviarlo.</p>
       </div>
     </div>
   );

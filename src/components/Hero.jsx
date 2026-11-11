@@ -13,7 +13,7 @@ function Lead() {
         ))}
       </h1>
       <p className={styles.sub}>
-        Diseñamos y programamos páginas que llevan a tus clientes directo a tu WhatsApp, o desarrollamos una app a medida para tu sistema.
+        Desarrollamos páginas que llevan a tus clientes directo a tu WhatsApp, o desarrollamos aplicaciones a medida para tu negocio.
       </p>
     </>
   );
@@ -29,9 +29,6 @@ function Action() {
         </a>
         <a className="btn btnQuiet" href="#precios">Ver precios</a>
       </div>
-      <p className={styles.price}>
-        Landing pages <strong>desde $80.000</strong>
-      </p>
     </>
   );
 }
