@@ -26,7 +26,8 @@ The exact quote is agreed in a WhatsApp conversation, based on project complexit
 
 - Services: landing pages and custom apps. Basic SEO and fast loading are part of every landing page, not a separate service.
 - Google Ads is no longer offered. It must not appear anywhere: site copy, metadata, sitemap or anything else.
-- Landing page price is published as "desde $80.000" (ARS). The upper reference of $275.000 is internal and is not published, so the studio can charge by complexity.
+- Landing page price is published as "desde $120.800" (ARS). The upper reference of $275.000 is internal and is not published, so the studio can charge by complexity.
+- Institutional site ("Página institucional", up to 5 pages) is published as "desde $232.300" (ARS) with a monthly plan of $45.000 (ARS).
 - Every landing page requires a monthly plan of $25.000 (ARS), which includes hosting, domain management ("gestión del dominio") and up to 2 modifications per month. Whether the domain registration itself is paid by the client is not stated on the site.
 - Custom apps have no published price. Clients ask for a quote.
 - WhatsApp is the main action. The site has no contact form; email is shown as plain contact information.

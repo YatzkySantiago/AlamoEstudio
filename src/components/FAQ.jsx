@@ -4,8 +4,8 @@ import styles from './FAQ.module.css';
 
 const PREGUNTAS = [
   {
-    q: '¿Cuánto sale una landing page?',
-    a: 'Desde $80.000, y tienen un costo operativo y de mantenimiento mensual de $25.000. El precio final depende de la complejidad del proyecto.',
+    q: '¿Para qué sirve una Landing Page?',
+    a: 'Tener presencia online es cada vez mas importante, todos buscamos productos y negocios en internet. Con una Landing Page podes captar esas ventas que hoy se te escapan.',
   },
   {
     q: '¿Qué incluye el mantenimiento mensual?',

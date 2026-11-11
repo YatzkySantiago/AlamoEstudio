@@ -6,6 +6,7 @@ export const waLink = (text) => `https://wa.me/${NUMBER}?text=${encodeURICompone
 export const WA_MESSAGES = {
   general: 'Hola, Álamo Estudio. Quiero hacer una consulta para mi negocio.',
   landing: 'Hola, Álamo Estudio. Quiero una landing page para mi negocio. ¿Me pasan un presupuesto?',
+  institucional: 'Hola, Álamo Estudio. Quiero una página institucional para mi negocio. ¿Me pasan un presupuesto?',
   app: 'Hola, Álamo Estudio. Quiero una app a medida para mi negocio. ¿Me pasan un presupuesto?',
 };
 

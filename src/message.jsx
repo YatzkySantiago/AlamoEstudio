@@ -1,6 +1,7 @@
 import { createContext, useContext, useMemo, useState } from 'react';
 
 export const PLAN_MENSUAL = '$25.000';
+export const PLAN_INSTITUCIONAL = '$45.000';
 
 export const NEEDS = [
   {
@@ -8,9 +9,20 @@ export const NEEDS = [
     label: 'Landing page',
     short: 'Landing',
     priceLabel: 'Landing page',
-    price: 'desde $80.000',
+    price: 'desde $120.800',
     priceNote: `+ ${PLAN_MENSUAL} por mes`,
     ask: 'Quiero una landing page',
+    close: '.',
+    tail: ' ¿Me pasan un presupuesto?',
+  },
+  {
+    id: 'institucional',
+    label: 'Institucional',
+    short: 'Sitio web',
+    priceLabel: 'Página institucional',
+    price: 'desde $232.300',
+    priceNote: `+ ${PLAN_INSTITUCIONAL} por mes · hasta 5 páginas`,
+    ask: 'Quiero una página institucional',
     close: '.',
     tail: ' ¿Me pasan un presupuesto?',
   },

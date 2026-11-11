@@ -29,7 +29,7 @@
 .segmented {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--count, 3), minmax(0, 1fr));
   padding: 4px;
   border-radius: 12px;
   background: var(--ground);
@@ -41,7 +41,7 @@
   top: 4px;
   bottom: 4px;
   left: 4px;
-  width: calc((100% - 8px) / 3);
+  width: calc((100% - 8px) / var(--count, 3));
   border-radius: 9px;
   background: var(--ink);
   transform: translateX(calc(var(--index) * 100%));
@@ -180,5 +180,6 @@
 @media (max-width: 420px) {
   .long { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   .short { display: inline; }
+  .option { padding: 0 2px; font-size: 0.875rem; }
   .fields { grid-template-columns: 1fr; }
 }

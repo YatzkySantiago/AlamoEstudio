@@ -24,9 +24,7 @@ export default function App() {
           <Cierre />
         </div>
       </main>
-      <div className="page">
-        <Footer />
-      </div>
+      <Footer />
       <MobileBar />
     </MessageProvider>
   );

@@ -19,7 +19,7 @@ export default function MessageBuilder() {
     <div id="mensaje" className={styles.builder}>
       <fieldset className={styles.fieldset}>
         <legend className={styles.label}>¿Qué necesitás?</legend>
-        <div className={styles.segmented} style={{ '--index': needIndex }}>
+        <div className={styles.segmented} style={{ '--index': needIndex, '--count': NEEDS.length }}>
           <span className={styles.thumb} aria-hidden="true" />
           {NEEDS.map((item) => (
             <label key={item.id} className={styles.option} data-selected={item.id === need.id || undefined}>
@@ -37,7 +37,7 @@ export default function MessageBuilder() {
           ))}
         </div>
         <p className={styles.price} key={need.id}>
-          <strong>{need.price}</strong> {need.id === 'landing' ? need.priceNote : ''}
+          <strong>{need.price}</strong> {need.price.startsWith('desde') ? need.priceNote : ''}
         </p>
       </fieldset>
 
