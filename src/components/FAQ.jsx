@@ -8,12 +8,12 @@ const PREGUNTAS = [
     a: 'Desde $80.000, y tienen un costo operativo y de mantenimiento mensual de $25.000. El precio final depende de la complejidad del proyecto.',
   },
   {
-    q: '¿Qué incluye el plan mensual?',
-    a: 'El hosting, la gestión del dominio y hasta 2 modificaciones por mes.',
+    q: '¿Qué incluye el mantenimiento mensual?',
+    a: 'Incluye el hosting, la gestión del dominio y hasta 2 modificaciones por mes.',
   },
   {
     q: '¿Ustedes se encargan del diseño y la programación?',
-    a: 'Diseñamos la página y después la programamos. Podés estar tan involucrado como prefieras.',
+    a: 'Nos encargamos de todo. Podés estar tan involucrado como prefieras.',
   },
   {
     q: '¿Necesito tener una página web previa?',
@@ -21,15 +21,15 @@ const PREGUNTAS = [
   },
   {
     q: '¿Y si ya tengo una página web?',
-    a: 'En ese caso podemos hacer un diagnostico de la misma, optimizarla y modernizarla!',
+    a: 'En ese caso podemos hacer un diagnostico de la misma, optimizarla y actualizarla.',
   },
   {
-    q: '¿Qué incluye el SEO básico?',
-    a: 'Dejamos la página preparada para que los buscadores la entiendan, siguiendo los mas altos estándares de velocidad.',
+    q: '¿Qué es el SEO básico?',
+    a: 'Cosnsiste en dejar la página preparada para que los clientes te encuentren en internet.',
   },
   {
-    q: '¿Qué es una app a medida?',
-    a: 'Un desarrollo pensado para algo puntual de tu negocio que una página no resuelve. Contanos la idea y te pasamos un presupuesto.',
+    q: '¿Qué es una aplicación a medida?',
+    a: 'Una aplicacion a medida puede servir para facilitar, optimizar o automatizar procesos de tu negocio. Contanos tu idea!',
   },
 ];
 
