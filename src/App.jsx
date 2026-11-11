@@ -14,15 +14,17 @@ export default function App() {
     <MessageProvider>
       <a href="#inicio" className="skip">Saltar al contenido</a>
       <Header />
-      <div className="page">
-        <main id="inicio">
-          <Hero />
+      <main id="inicio">
+        <Hero />
+        <div className="page">
           <Trabajos />
           <Precios />
           <Proceso />
           <FAQ />
           <Cierre />
-        </main>
+        </div>
+      </main>
+      <div className="page">
         <Footer />
       </div>
       <MobileBar />

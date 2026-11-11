@@ -10,16 +10,62 @@ const ALERTAS = [
   { Icon: MessageCircle, titulo: 'Nueva consulta', texto: '¿Hacen envíos a Cipolletti?' },
   { Icon: ShoppingBag, titulo: 'Nueva venta', texto: 'Kit de herramientas x2' },
   { Icon: CalendarCheck, titulo: 'Nuevo turno', texto: 'Jueves a las 10:30' },
+  { Icon: MessageCircle, titulo: 'Nueva consulta', texto: '¿Cuánto sale el envío?' },
+  { Icon: CalendarCheck, titulo: 'Nueva reserva', texto: 'Mesa para 2, viernes 21 h' },
 ];
 
-const CUANDO = ['ahora', 'hace 2 min', 'hace 5 min'];
-const VISIBLES = CUANDO.length;
-const INTERVALO = 2800;
+const INTERVALO = 1700;
+const EDAD_MAXIMA = 12;
+const DESENFOCADAS = ['f1', 'f2', 'f3', 'f4', 'f5', 'f6'];
+
+// Order in which the slots receive a new alert, jumping from one side to the other.
+const POSICIONES = {
+  escritorio: ['a', 'e', 'c', 'd', 'b', 'f'],
+  tablet: ['a', 'c', 'd', 'f'],
+  celular: ['a'],
+};
+
+const CELULAR = '(max-width: 680px)';
+const TABLET = '(max-width: 1239px)';
+
+function leerPantalla() {
+  if (window.matchMedia(CELULAR).matches) return 'celular';
+  return window.matchMedia(TABLET).matches ? 'tablet' : 'escritorio';
+}
+
+function usePantalla() {
+  const [pantalla, setPantalla] = useState(leerPantalla);
+
+  useEffect(() => {
+    const queries = [window.matchMedia(CELULAR), window.matchMedia(TABLET)];
+    const update = () => setPantalla(leerPantalla());
+    update();
+    queries.forEach((query) => query.addEventListener('change', update));
+    return () => queries.forEach((query) => query.removeEventListener('change', update));
+  }, []);
+
+  return pantalla;
+}
+
+function Tarjeta({ alerta, edad, saliendo, espera }) {
+  const { Icon, titulo, texto } = alerta;
+  return (
+    <div className={`${styles.card} ${saliendo ? styles.out : ''}`} style={{ '--wait': `${espera}ms` }}>
+      <span className={styles.icon}><Icon size={20} strokeWidth={1.75} /></span>
+      <span className={styles.body}>
+        <span className={styles.title}>{titulo}</span>
+        <span className={styles.text}>{texto}</span>
+      </span>
+      <span className={styles.when}>{edad === 0 ? 'ahora' : `hace ${edad} min`}</span>
+    </div>
+  );
+}
 
 export default function Alerts() {
-  // `tick` only grows, so each alert keeps its React key while it moves down the stack.
-  const [tick, setTick] = useState(ALERTAS.length * 2);
+  // `tick` only grows; every tick replaces the alert of one slot, in turn.
+  const [tick, setTick] = useState(0);
   const paused = useRef(false);
+  const posiciones = POSICIONES[usePantalla()];
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
@@ -29,30 +75,38 @@ export default function Alerts() {
     return () => clearInterval(timer);
   }, []);
 
-  // One extra item stays mounted in the last slot so it can fade out.
-  const slots = Array.from({ length: VISIBLES + 1 }, (_, slot) => ({ slot, id: tick - slot }));
+  const total = posiciones.length;
+
+  // Generation 0 is the alert shown on load; generation n arrives at tick `posicion + 1 + (n - 1) * total`.
+  const generacion = (posicion, numero) => {
+    if (numero === 0) {
+      return { alerta: ALERTAS[posicion], llegada: 0, edadInicial: total - 1 - posicion, espera: 350 + posicion * 110 };
+    }
+    const llegada = posicion + 1 + (numero - 1) * total;
+    return { alerta: ALERTAS[(llegada + 5) % ALERTAS.length], llegada, edadInicial: 0, espera: 140 };
+  };
+
+  const edadDe = ({ llegada, edadInicial }) => Math.min(edadInicial + tick - llegada, EDAD_MAXIMA);
 
   return (
-    <figure
-      className={styles.figure}
-      onPointerEnter={() => { paused.current = true; }}
-      onPointerLeave={() => { paused.current = false; }}
-    >
-      <ul className={styles.stack} aria-hidden="true">
-        {slots.map(({ slot, id }) => {
-          const { Icon, titulo, texto } = ALERTAS[id % ALERTAS.length];
-          return (
-            <li key={id} className={styles.alert} style={{ '--slot': slot }} data-gone={slot === VISIBLES || undefined}>
-              <span className={styles.icon}><Icon size={22} strokeWidth={1.75} /></span>
-              <span className={styles.body}>
-                <span className={styles.title}>{titulo}</span>
-                <span className={styles.text}>{texto}</span>
-              </span>
-              <span className={styles.when}>{CUANDO[slot] ?? ''}</span>
-            </li>
-          );
-        })}
-      </ul>
-    </figure>
+    <div className={styles.stage} aria-hidden="true">
+      {DESENFOCADAS.map((nombre) => <i key={nombre} className={`${styles.far} ${styles[nombre]}`} />)}
+      {posiciones.map((nombre, posicion) => {
+        const numero = tick > posicion ? Math.floor((tick - posicion - 1) / total) + 1 : 0;
+        const actual = generacion(posicion, numero);
+        const anterior = numero > 0 && actual.llegada === tick ? generacion(posicion, numero - 1) : null;
+        return (
+          <div
+            key={nombre}
+            className={`${styles.slot} ${styles[nombre]}`}
+            onPointerEnter={() => { paused.current = true; }}
+            onPointerLeave={() => { paused.current = false; }}
+          >
+            {anterior && <Tarjeta key={numero - 1} alerta={anterior.alerta} edad={edadDe(anterior)} espera={0} saliendo />}
+            <Tarjeta key={numero} alerta={actual.alerta} edad={edadDe(actual)} espera={actual.espera} />
+          </div>
+        );
+      })}
+    </div>
   );
 }

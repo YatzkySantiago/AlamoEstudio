@@ -1,32 +1,50 @@
+/* Full-bleed, pulled up under the sticky header so the aura shows through it. */
 .hero {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-  gap: 48px clamp(40px, 5vw, 80px);
+  place-items: center;
+  min-height: 100svh;
+  margin-top: calc(var(--header) * -1);
+  padding: calc(var(--header) + 40px) var(--gutter) 40px;
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, rgba(244, 246, 248, 0) 78%, var(--ground) 100%),
+    radial-gradient(52% 58% at 0% 100%, rgba(74, 144, 196, 0.3), rgba(74, 144, 196, 0) 100%),
+    radial-gradient(48% 52% at 100% 0%, rgba(74, 144, 196, 0.24), rgba(74, 144, 196, 0) 100%),
+    var(--ground);
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  min-height: min(calc(100svh - var(--header)), 920px);
-  padding: clamp(32px, 4vw, 56px) var(--gutter) clamp(56px, 6vw, 88px);
-  overflow-x: clip;
+  max-width: 46rem;
+  text-align: center;
 }
 
 .title {
-  font-size: clamp(2.875rem, 1.6rem + 3.6vw, 5rem);
-  letter-spacing: -0.045em;
+  max-width: 8em;
+  font-size: clamp(3rem, 6.6vw, 6rem);
+  letter-spacing: -0.05em;
   line-height: 0.96;
 }
 
 .sub {
-  max-width: 31rem;
-  margin-top: clamp(18px, 2vw, 26px);
-  font-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
-  line-height: 1.4;
+  max-width: 35rem;
+  margin-top: 22px;
+  font-size: clamp(1.0625rem, 1.35vw, 1.25rem);
+  line-height: 1.42;
   color: var(--ink-2);
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
-  margin-top: clamp(28px, 3vw, 40px);
+  margin-top: 30px;
 }
 
 .primary {
@@ -39,7 +57,7 @@
 .actions :global(.btnQuiet) { min-height: 60px; }
 
 .price {
-  margin-top: 20px;
+  margin-top: 16px;
   font-size: 0.9688rem;
   color: var(--ink-2);
 }
@@ -66,12 +84,15 @@
   from { opacity: 0; filter: blur(8px); transform: translateY(12px); }
 }
 
-@media (max-width: 860px) {
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: 0;
-  }
+/* The corner alerts sit above and below the copy here, so it needs room on both sides. */
+@media (max-width: 1239px) {
+  .hero { padding-block: calc(var(--header) + 130px) 130px; }
+}
 
+@media (max-width: 680px) {
+  .hero { padding-block: calc(var(--header) + 124px) 124px; }
+  .copy,
+  .actions { width: 100%; }
   .primary { flex: 1 1 100%; }
   .actions :global(.btnQuiet) { flex: 1 1 100%; }
 }

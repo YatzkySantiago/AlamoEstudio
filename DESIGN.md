@@ -1,6 +1,6 @@
 ---
 name: Álamo Estudio
-description: A clean, light studio page whose hero stacks the alerts a business could receive and closes on a green band where the visitor writes their WhatsApp message.
+description: A clean, light studio page whose full-width hero is surrounded by the alerts a business could receive and closes on a green band where the visitor writes their WhatsApp message.
 colors:
   ground: "#f4f6f8"
   surface: "#ffffff"
@@ -19,10 +19,10 @@ colors:
 typography:
   display:
     fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
-    fontSize: "clamp(2.875rem, 1.6rem + 3.6vw, 5rem)"
+    fontSize: "clamp(3rem, 6.6vw, 6rem)"
     fontWeight: 700
     lineHeight: 0.96
-    letterSpacing: "-0.045em"
+    letterSpacing: "-0.05em"
   numeral:
     fontFamily: "Schibsted Grotesk, system-ui, sans-serif"
     fontSize: "clamp(3.75rem, 2.5rem + 5vw, 6rem)"
@@ -150,14 +150,14 @@ components:
   alert-card:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.panel}"
-    padding: "0 20px 0 16px"
-    height: "88px"
+    rounded: "16px"
+    padding: "0 16px 0 12px"
+    height: "72px"
   alert-icon:
     backgroundColor: "{colors.ground}"
     textColor: "{colors.brand-ink}"
-    rounded: "{rounded.card}"
-    size: "48px"
+    rounded: "12px"
+    size: "44px"
   builder-card:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
@@ -202,18 +202,18 @@ components:
 
 A cool, pale, quiet studio page. The page is a single centered column of 1240px held between two page-long hairline rails; sections stack inside it, each separated by a full-width hairline rule and given the same generous vertical breath. Surfaces are white, rested on a pale blue-grey ground and outlined by hairline rings rather than borders or heavy shadows. One grotesque family carries everything, from an 80px tight-tracked headline down to a 12px bubble timestamp.
 
-The hero pairs the headline with a stack of three white alert cards, cycling through illustrative examples of what can reach a business: a query, a sale, a booking. They are captioned as examples and carry nothing that can be pressed. The page ends on its only full-colour ground: a WhatsApp-green band holding a white message-builder card, where the visitor picks what they need and sends the message.
+The hero is the one full-width band: the headline, lead, actions and price sit centered on both axes over a pale blue aura, and six white alert cards float around them, replaced one at a time with illustrative examples of what can reach a business: a query, a sale, a booking. They carry nothing that can be pressed. The page ends on its only full-colour ground: a WhatsApp-green band holding a white message-builder card, where the visitor picks what they need and sends the message.
 
 Colour is nearly absent by design. Ink is near-black, secondary text is a cool slate, and the only saturated hue is WhatsApp green, which belongs to WhatsApp: the controls that open it and the one section whose job is sending the message. The logo blue survives as a deeper "brand ink" for small accents: focus rings, the caret, the builder's live price, checkmarks, the alert icons. Warm colour enters only inside chat previews.
 
-Motion is restrained and purposeful: the headline settles in once, in the builder only the message segments the visitor changes blur in, and the alert stack is the one thing that keeps moving. Everything stops under reduced motion.
+Motion is restrained and purposeful: the headline settles in once, in the builder only the message segments the visitor changes blur in, and the floating alerts are the one thing that keeps moving. Everything stops under reduced motion.
 
 **Key Characteristics:**
 - Cool pale ground, white surfaces, hairline rings, page-long hairline rails above 1300px.
 - One family (Schibsted Grotesk 400/500/600/700), tight negative tracking on all headings.
 - WhatsApp green on WhatsApp actions and on the single closing band; brand ink only for small accents.
 - Real WhatsApp wall, bubble and timestamp colours, confined to chat previews.
-- A captioned stack of example alerts in the hero, with no controls and no green.
+- Example alerts floating around the centered hero copy, with no controls and no green.
 - Ring and lift for surfaces, nothing deeper.
 - Every interactive target at least 44px.
 
@@ -257,12 +257,12 @@ A cool, near-monochrome palette with one functional green and one small blue acc
 **Character:** A single newsy grotesque at four weights. Headings are bold and tightly tracked so large sizes read as one solid shape; body is open at 1.55 line-height.
 
 ### Hierarchy
-- **Display** (700, clamp 46px to 80px, line-height 0.96, -0.045em): the hero headline. The closing title uses the same voice slightly wider (clamp 44px to 84px, max 9em), in white on green.
+- **Display** (700, clamp 48px to 96px, line-height 0.96, -0.05em): the hero headline. The closing title uses the same voice slightly wider (clamp 44px to 84px, max 9em), in white on green.
 - **Numeral** (700, clamp 60px to 96px, line-height 1, -0.04em): the published price figure in the featured price box. The quote-only box uses a 36px to 52px figure at -0.035em; the monthly-plan figure is 28px at -0.03em with a 16px slate unit.
 - **Headline** (700, clamp 36px to 60px, line-height 1.04, -0.03em): every section h2, balanced wrap.
 - **Title** (700, 26px, -0.025em): price-box names; the mobile menu links share the size at 600 and -0.02em. Steps below: 20px process step titles (title-sm), 19px FAQ questions at 600 and -0.015em, 18px monthly-plan name.
 - **Lead** (400, clamp 18px to 22px, line-height 1.4, ink-2): hero support line, max 31rem. The closing sub runs one notch smaller (up to 21px) in 88% white; section-head copy is 18px.
-- **Body** (400, 17px, line-height 1.55): running text and buttons (buttons at 600, -0.01em; large buttons 18px). Alert titles share the button voice at 17px, 600, -0.01em, line-height 1.3. The builder bubble is 17px at line-height 1.42. Answer copy max 38rem.
+- **Body** (400, 17px, line-height 1.55): running text and buttons (buttons at 600, -0.01em; large buttons 18px). Alert titles use 16px at 600, -0.01em, line-height 1.3. The builder bubble is 17px at line-height 1.42. Answer copy max 38rem.
 - **Body small** (400, 16px, line-height 1.42): inputs and process chat bubbles.
 - **Label** (500, 15.5px): nav links, footer links, segmented options, price lines, plan list. The alert text and hero price line use the size at 400. Field legends and step numerals sit at 15px, 600.
 - **Caption** (400, 14px, ink-3 or ink-2): the alert stack caption, builder note, field labels, copyright.
@@ -280,11 +280,11 @@ A cool, near-monochrome palette with one functional green and one small blue acc
 
 A centered 1240px page column with a fluid gutter (20px to 56px). Above 1300px the column is drawn as a sheet between two 1px hairline rails running the page's full length. Every section between hero and close uses the same fluid padding (72px to 128px vertical) and a 1px top rule, so rhythm is uniform and sections read as panels of one sheet.
 
-The hero is a two-column grid (1.12fr copy, 0.88fr alert stack) vertically centered in the first viewport, capped at 920px tall, with a 40px to 80px column gap. The closing band is a two-column grid (0.9fr copy, 1.1fr builder card) at the same section padding, full-bleed to the page column.
+The hero sits outside the page column and spans the viewport: it fills the first screen, is pulled up under the sticky header so the aura shows through it, and centers its copy on both axes in the area below the header. The aura is two soft logo-blue radial glows in opposite corners, fading to the ground at the foot so it joins the next section without an edge. The closing band is a two-column grid (0.9fr copy, 1.1fr builder card) at the same section padding, full-bleed to the page column.
 
 Section heads are a two-column grid (heading, then a 24rem supporting paragraph aligned to the bottom), collapsing to one column under 760px, with 36px to 64px below. Content grids are asymmetric, never equal thirds: 7fr/5fr for work frames and prices, 5fr/6fr for the process, 5fr/7fr for FAQ with a sticky heading. Grid gaps are 20px, tightening to 14px on mobile.
 
-The sticky header is 68px; anchor scrolling offsets by header plus 16px. At 860px and below, nav collapses into a full-height sheet; hero, closing, price, process and FAQ grids stack (copy first), hero buttons go full width, the alert stack keeps its 440px maximum centered below the copy, and a fixed WhatsApp bar appears at the bottom only while no other WhatsApp action is on screen (the footer pads 104px to clear it). Work frames collapse at 760px. Under 420px the segmented control switches to short labels and the builder's two fields stack.
+The sticky header is 68px; anchor scrolling offsets by header plus 16px. At 860px and below, nav collapses into a full-height sheet; closing, price, process and FAQ grids stack (copy first), and a fixed WhatsApp bar appears at the bottom only while no other WhatsApp action is on screen (the footer pads 104px to clear it). Work frames collapse at 760px. The hero keeps six alerts from 1240px, four in the corners below that, and one above the copy at 680px and below, where its buttons go full width. Under 420px the segmented control switches to short labels and the builder's two fields stack.
 
 ## Elevation & Depth
 
@@ -318,13 +318,13 @@ Solid, quiet and tall.
 ### Navigation
 Logo left, centered links, actions right in a three-column header on frosted ground with a hairline bottom edge. Links are 15.5px at 500 in slate, 44px tall, 10px corners; hover goes to ink on a 5% ink wash; current link is ink. Under 860px a 44px toggle opens a full-height sheet of 26px links, 64px tall, divided by hairlines; the closed sheet is `inert` and hidden.
 
-### Hero Alert Stack (signature)
+### Hero Floating Alerts (signature)
 Calm, unclickable evidence of what a page can bring in.
-- **Frame:** a figure up to 440px wide, centered in the hero's right column, holding three 88px slots with 14px between them and a caption 20px below.
-- **Card:** white, 20px corners, lift shadow, 16px left and 20px right padding, 14px between its parts.
-- **Contents:** a 48px ground tile with 14px corners holding a 22px brand-ink line icon (1.75 stroke); a 17px title at 600; one line of 15.5px slate text truncated with an ellipsis; a 13px muted relative time ("ahora", "hace 2 min", "hace 5 min") aligned to the card's upper part.
-- **Depth:** slots fade with position, at 100%, 76% and 52% opacity. A fourth card stays mounted below the stack only so it can fade out.
-- **Caption:** centered 14px muted text marking the alerts as examples, always present. The stack is `aria-hidden`; the caption carries the meaning.
+- **Placement:** six absolutely placed 290 by 72px slots around the centered copy, three per side, never touching it. Four remain below 1240px, in the corners; one remains at 680px and below, full width above the copy.
+- **Card:** white, 16px corners, a hairline plus a soft blue-tinted shadow, 12px left and 16px right padding, 12px between its parts.
+- **Contents:** a 44px ground tile with 12px corners holding a 20px brand-ink line icon (1.75 stroke); a 16px title at 600; one line of 14.4px slate text truncated with an ellipsis; a 12px muted relative time ("ahora", "hace 3 min") in the upper-right corner.
+- **Depth:** half the slots are scaled to 92%, and six blurred logo-blue pieces sit behind them. Those pieces are hidden on phones.
+- The whole layer is `aria-hidden`.
 
 **The Nothing To Press Rule.** Example content in the hero must never contain anything resembling a real control: no buttons or button-shaped fills, no links, no inputs, no WhatsApp green. A sample button can be mistaken for a real one, so the only controls in the hero are the real ones.
 
@@ -352,12 +352,12 @@ Under 860px only: a fixed bottom bar on frosted ground with a hairline top edge 
 ### Motion
 - **Easing:** one curve, `cubic-bezier(0.16, 1, 0.3, 1)`, for every entrance and slide; 0.15 to 0.2s plain ease for colour and shadow hovers.
 - **Headline settle:** each word fades from 8px blur and 12px down over 0.8s, staggered 45ms; the lead, actions and price line follow at 0.35s, 0.5s and 0.6s.
-- **Alert cycle:** every 2.8s the stack advances through six illustrative alerts. The newest card arrives on top, fading in from 20px above and 0.96 scale over 0.7s; the others slide down one slot over 0.7s on the system ease, their opacity following over 0.5s on a plain ease; the oldest fades out. The cycle pauses while the pointer is over the stack or the tab is hidden.
+- **Alert cycle:** every 1.7s one slot, jumping between sides, swaps its card for the next of eight illustrative alerts. The old card leaves over 0.32s; the new one rises 14px from 0.94 scale over 0.6s on the system ease and reads "ahora", while the others age by a minute. On load the cards enter staggered by 110ms. The cycle pauses while the pointer is over a card or the tab is hidden.
 - **Segment write:** in the builder, only newly changed message segments and the price line fade in from a 5px blur over 0.45s; segments present on first render stay still.
 - **Scroll bubbles:** where `animation-timeline: view()` is supported, process chat bubbles rise 14px and scale from 0.98 as they enter.
 - **Reduced motion:** every entrance is gated behind `prefers-reduced-motion: no-preference`, the alert timer never starts so the stack stays static, and a global rule collapses remaining transitions and smooth scrolling.
 
-**The One Loop Rule.** The hero alert stack is the single looping motion in the system. It stays static under reduced motion and pauses while the pointer is over it. Nothing else repeats.
+**The One Loop Rule.** The hero alert cycle is the single looping motion in the system. It stays static under reduced motion and pauses while the pointer is over it. Nothing else repeats.
 
 ### Accessibility conventions
 A global 2px brand-ink focus-visible ring at 3px offset with 6px corners (segmented options show it at 2px offset; inputs swap it for an inset). Every interactive target is at least 44px. A skip link sits off-screen and drops in on focus as an ink chip with 10px corners. Hidden menus and bars are `inert`. Decorative objects (the alert stack, the bubble mirror) are `aria-hidden`, with the message announced through a polite live region. Icons are `aria-hidden` beside visible text.
@@ -371,7 +371,7 @@ A global 2px brand-ink focus-visible ring at 3px offset with 6px corners (segmen
 - **Do** give every section the shared section padding and a 1px hairline top rule inside the 1240px column.
 - **Do** use asymmetric fr grids (1.12/0.88, 7/5, 5/6, 5/7, 0.9/1.1) and collapse them at 860px (work frames at 760px).
 - **Do** keep chat previews faithful to WhatsApp: beige wall, green outgoing bubble, white incoming bubble, squared sender corner.
-- **Do** caption any illustrative content shown in the hero as an example.
+- **Do** keep illustrative content in the hero free of real names, figures and controls.
 - **Do** keep every target at least 44px and rely on the global brand-ink focus ring.
 - **Do** gate every entrance animation behind reduced-motion and use the single system ease.
 
@@ -382,4 +382,4 @@ A global 2px brand-ink focus-visible ring at 3px offset with 6px corners (segmen
 - **Don't** introduce a second typeface or untracked bold headings.
 - **Don't** add depth levels beyond ring and lift for surfaces, or use borders where an inset or ring is the convention.
 - **Don't** add blobs, rotating headline words or badges.
-- **Don't** animate on loop, with one exception: the hero alert stack, which must stay static under reduced motion and pause on hover. Everything else moves once on entry or in response to the visitor.
+- **Don't** animate on loop, with one exception: the hero alert cycle, which must stay static under reduced motion and pause on hover. Everything else moves once on entry or in response to the visitor.

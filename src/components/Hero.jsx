@@ -39,12 +39,10 @@ function Action() {
 export default function Hero() {
   return (
     <section className={styles.hero}>
+      <Alerts />
       <div className={styles.copy}>
         <Lead />
         <Action />
-      </div>
-      <div className={styles.visual}>
-        <Alerts />
       </div>
     </section>
   );

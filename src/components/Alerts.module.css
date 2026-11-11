@@ -1,51 +1,67 @@
-.figure {
-  --card: 88px;
-  --gap: 14px;
-  display: grid;
-  gap: 20px;
-  width: min(440px, 100%);
-  margin-inline: auto;
-}
-
-.stack {
-  position: relative;
-  height: calc(var(--card) * 3 + var(--gap) * 2);
-}
-
-.alert {
+/* Sits below the sticky header, so the percentages below are measured from its bottom edge. */
+.stage {
   position: absolute;
-  inset: 0 0 auto;
+  inset: var(--header) 0 0;
+}
+
+.slot {
+  position: absolute;
+  z-index: 1;
+  width: 290px;
+  height: 72px;
+  transform: scale(var(--s, 1));
+}
+
+.a { left: 8vw; top: 11%; }
+.b { left: 3vw; top: 45%; --s: 0.92; }
+.c { left: 13vw; top: 79%; }
+.d { right: 11vw; top: 8%; --s: 0.92; }
+.e { right: 3vw; top: 48%; }
+.f { right: 7vw; top: 82%; --s: 0.92; }
+
+.card {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
-  gap: 14px;
-  height: var(--card);
-  padding: 0 20px 0 16px;
-  border-radius: var(--radius-lg);
+  gap: 12px;
+  padding: 0 16px 0 12px;
+  border-radius: 16px;
   background: var(--surface);
-  box-shadow: var(--lift);
-  opacity: calc(1 - var(--slot) * 0.24);
-  transform: translateY(calc(var(--slot) * (var(--card) + var(--gap))));
-  transition: transform 0.7s var(--ease), opacity 0.5s ease;
+  box-shadow:
+    0 0 0 1px rgba(20, 24, 29, 0.06),
+    0 1px 2px rgba(20, 24, 29, 0.06),
+    0 24px 44px -22px rgba(20, 44, 70, 0.32);
 }
-
-.alert[data-gone] { opacity: 0; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .alert { animation: arrive 0.7s var(--ease); }
+  .card {
+    animation: pop 0.6s var(--ease) both;
+    animation-delay: var(--wait, 0ms);
+  }
+
+  .card.out { animation: leave 0.32s ease both; }
 }
 
-/* Uses translate and scale so it never competes with the transform that places each slot. */
-@keyframes arrive {
-  from { opacity: 0; translate: 0 -20px; scale: 0.96; }
+@media (prefers-reduced-motion: reduce) {
+  .card.out { display: none; }
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: translateY(14px) scale(0.94); }
+}
+
+@keyframes leave {
+  to { opacity: 0; transform: translateY(-8px) scale(0.98); }
 }
 
 .icon {
   display: grid;
   place-items: center;
   flex: none;
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background: var(--ground);
   color: var(--brand-ink);
 }
@@ -58,29 +74,60 @@
 }
 
 .title {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 .text {
   color: var(--ink-2);
-  font-size: 0.9688rem;
+  font-size: 0.9rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .when {
-  align-self: flex-start;
-  flex: none;
-  padding-top: 20px;
+  /* Out of the row so the message below it can use the card's full width. */
+  position: absolute;
+  top: 12px;
+  right: 14px;
   color: var(--ink-3);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
 }
 
-.caption {
-  color: var(--ink-3);
-  font-size: 0.875rem;
-  text-align: center;
+/* Out-of-focus pieces, for depth only. */
+.far {
+  position: absolute;
+  height: 18px;
+  border-radius: 9px;
+  background: #9fc3e2;
+  filter: blur(7px);
+  opacity: 0.75;
+}
+
+.f1 { left: 22vw; top: 6%; width: 96px; }
+.f2 { left: 20vw; top: 32%; width: 70px; }
+.f3 { left: 5vw; top: 68%; width: 110px; }
+.f4 { right: 24vw; top: 16%; width: 80px; }
+.f5 { right: 18vw; top: 70%; width: 100px; }
+.f6 { right: 4vw; top: 28%; width: 64px; }
+
+@media (max-width: 1239px) {
+  .a { left: var(--gutter); top: 32px; }
+  .d { right: var(--gutter); top: 32px; }
+  .c { left: var(--gutter); top: auto; bottom: 32px; }
+  .f { right: var(--gutter); top: auto; bottom: 32px; }
+  .f2, .f3, .f5, .f6 { display: none; }
+}
+
+@media (max-width: 680px) {
+  .a {
+    left: var(--gutter);
+    right: var(--gutter);
+    top: 24px;
+    width: auto;
+  }
+
+  .far { display: none; }
 }
