@@ -180,6 +180,5 @@
 @media (max-width: 420px) {
   .long { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
   .short { display: inline; }
-  .option { padding: 0 2px; font-size: 0.875rem; }
   .fields { grid-template-columns: 1fr; }
 }

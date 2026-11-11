@@ -37,17 +37,6 @@ export const NEEDS = [
     close: '.',
     tail: ' ¿Me pasan un presupuesto?',
   },
-  {
-    id: 'nose',
-    label: 'No sé',
-    short: 'No sé',
-    priceLabel: '¿No sabés qué necesitás?',
-    price: 'Te ayudamos',
-    priceNote: 'Contanos tu negocio y lo definimos juntos',
-    ask: 'Necesito algo digital',
-    close: ', pero no sé bien qué me conviene.',
-    tail: ' ¿Me ayudan a definirlo?',
-  },
 ];
 
 function buildSegments(need, business, city) {
