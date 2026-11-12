@@ -26,7 +26,7 @@ const SERVICIOS = [
 
 const IDEAS = [
   { Icon: CalendarCheck, titulo: 'Turnos y reservas', texto: 'Tus clientes eligen el horario.' },
-  { Icon: Package, titulo: 'Listas de precios', texto: 'Unificás tus listas y armas pedidos.' },
+  { Icon: Package, titulo: 'Listas de precios', texto: 'Unificás tus listas y armás pedidos.' },
   { Icon: ShoppingBag, titulo: 'Pedidos online', texto: 'Recibís y ordenás pedidos en un lugar.' },
   { Icon: Users, titulo: 'Panel de clientes', texto: 'Historial, datos y seguimiento de cada uno.' },
 ];
@@ -35,7 +35,7 @@ export default function Precios() {
   return (
     <section id="precios" className="section">
       <div className="sectionHead">
-        <h2>Cuánto sale?</h2>
+        <h2>¿Cuánto sale?</h2>
         <p>Valores de nuestros servicios.</p>
       </div>
 
@@ -86,7 +86,7 @@ export default function Precios() {
           <div className={styles.appHead}>
             <div>
               <h3 className={styles.name}>App a medida</h3>
-              <p className={styles.desc}>Un sistema hecho especificamente para tu negocio.</p>
+              <p className={styles.desc}>Un sistema hecho específicamente para tu negocio.</p>
             </div>
             <a className={`btn btnQuiet ${styles.appAction}`} href={waLink(WA_MESSAGES.app)} target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon />

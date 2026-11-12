@@ -5,7 +5,7 @@ import styles from './FAQ.module.css';
 const PREGUNTAS = [
   {
     q: '¿Para qué sirve una Landing Page?',
-    a: 'Tener presencia online es cada vez mas importante, todos buscamos productos y negocios en internet. Con una Landing Page podes captar esas ventas que hoy se te escapan.',
+    a: 'Tener presencia online es cada vez más importante, todos buscamos productos y negocios en internet. Con una Landing Page podés captar esas ventas que hoy se te escapan.',
   },
   {
     q: '¿Qué incluye el mantenimiento mensual?',
@@ -21,15 +21,15 @@ const PREGUNTAS = [
   },
   {
     q: '¿Y si ya tengo una página web?',
-    a: 'En ese caso podemos hacer un diagnostico de la misma, optimizarla y actualizarla.',
+    a: 'En ese caso podemos hacer un diagnóstico de la misma, optimizarla y actualizarla.',
   },
   {
     q: '¿Qué es el SEO básico?',
-    a: 'Cosnsiste en dejar la página preparada para que los clientes te encuentren en internet.',
+    a: 'Consiste en dejar la página preparada para que los clientes te encuentren en internet.',
   },
   {
     q: '¿Qué es una aplicación a medida?',
-    a: 'Una aplicacion a medida puede servir para facilitar, optimizar o automatizar procesos de tu negocio. Contanos tu idea!',
+    a: 'Una aplicación a medida puede servir para facilitar, optimizar o automatizar procesos de tu negocio. Contanos tu idea!',
   },
 ];
 

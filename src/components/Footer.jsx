@@ -73,7 +73,7 @@ function Columnas() {
         </nav>
       </div>
       <div className={styles.bottom}>
-        <p>© {YEAR} Álamo Estudio</p>
+        <p suppressHydrationWarning>© {YEAR} Álamo Estudio</p>
         <a href="#inicio" className={styles.link}>Volver arriba ↑</a>
       </div>
     </>

@@ -34,7 +34,7 @@ function leerPantalla() {
 }
 
 function usePantalla() {
-  const [pantalla, setPantalla] = useState(leerPantalla);
+  const [pantalla, setPantalla] = useState('escritorio');
 
   useEffect(() => {
     const queries = [window.matchMedia(CELULAR), window.matchMedia(TABLET)];

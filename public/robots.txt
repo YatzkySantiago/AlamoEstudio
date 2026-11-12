@@ -1,0 +1,23 @@
+# Álamo Estudio — se permite el acceso a buscadores y asistentes de IA.
+User-agent: *
+Allow: /
+
+# Crawlers de IA (búsqueda, respuestas y entrenamiento)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: meta-externalagent
+User-agent: CCBot
+User-agent: DuckAssistBot
+Allow: /
+
+Sitemap: https://alamoestudio.com/sitemap.xml

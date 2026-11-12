@@ -1,0 +1,36 @@
+# Álamo Estudio
+
+> Estudio de diseño y desarrollo web de la Patagonia, Argentina. Diseña y programa landing pages, páginas institucionales y aplicaciones web a medida para PYMEs. Publica sus precios en pesos argentinos y atiende por WhatsApp.
+
+Álamo Estudio es un estudio (no una agencia) que trabaja para negocios de la Patagonia argentina. Cada proyecto termina en una página que lleva a los clientes directo al WhatsApp del negocio. El SEO básico y la carga rápida están incluidos en todas las páginas.
+
+## Servicios y precios (ARS)
+
+- **Landing page**: desde $120.800. Una página pensada para que los clientes encuentren el negocio y escriban. Incluye diseño y programación, SEO básico y carga rápida. Mantenimiento mensual obligatorio de $25.000 por mes (hosting, gestión del dominio y hasta 2 modificaciones por mes).
+- **Página institucional**: desde $232.300. El sitio completo de una empresa, de hasta 5 páginas. Incluye diseño y programación, SEO básico y carga rápida. Mantenimiento mensual de $45.000 por mes (hosting, gestión del dominio y hasta 2 modificaciones por mes).
+- **App a medida**: precio según las funciones. Ejemplos: turnos y reservas, listas de precios y armado de pedidos, pedidos online, panel de clientes con historial y seguimiento.
+
+Los precios son "desde" y pueden variar según la complejidad del proyecto. El presupuesto exacto se arma por WhatsApp.
+
+## Cómo trabajan
+
+1. El cliente escribe por WhatsApp y cuenta a qué se dedica su negocio y qué necesita.
+2. Álamo Estudio pasa el presupuesto, con el precio claro antes de empezar.
+3. Diseñan y programan; el cliente participa tanto como quiera.
+4. Publican el sitio online.
+
+No hace falta tener una página previa. Si el negocio ya tiene una, pueden diagnosticarla, optimizarla y actualizarla.
+
+## Contacto
+
+- WhatsApp: +54 299 674 6759 — https://wa.me/542996746759
+- Email: sy@alamoestudio.com
+- Ubicación: Patagonia, Argentina
+- Sitio: https://alamoestudio.com/
+
+## Secciones del sitio
+
+- [Precios](https://alamoestudio.com/#precios): valores de landing page, página institucional y app a medida.
+- [Cómo trabajamos](https://alamoestudio.com/#proceso): el proceso en cuatro pasos.
+- [Preguntas frecuentes](https://alamoestudio.com/#preguntas): mantenimiento, SEO básico, apps a medida.
+- [Contacto](https://alamoestudio.com/#cierre): armado del mensaje para WhatsApp.
