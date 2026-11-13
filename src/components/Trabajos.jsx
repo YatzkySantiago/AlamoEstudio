@@ -1,11 +1,11 @@
 import { ImageIcon } from 'lucide-react';
 import styles from './Trabajos.module.css';
 
-// Cuando haya un trabajo real, completá nombre, url e imagen (ruta dentro de /public).
+// Cada trabajo: nombre, url e imagen (ruta dentro de /public). El primero ocupa la columna grande.
 const TRABAJOS = [
-  { nombre: null, url: null, imagen: null },
-  { nombre: null, url: null, imagen: null },
-  { nombre: null, url: null, imagen: null },
+  { nombre: 'Uriarte & Lavalle Abogados', url: 'https://uriartelavalle.vercel.app', imagen: '/trabajos/uriartelavalle.jpg' },
+  { nombre: 'Taller Orsal', url: 'https://tallerorsal.vercel.app', imagen: '/trabajos/tallerorsal.jpg' },
+  { nombre: 'Nought', url: 'https://nought616.vercel.app', imagen: '/trabajos/nought616.jpg' },
 ];
 
 function Frame({ trabajo }) {
@@ -39,7 +39,7 @@ export default function Trabajos() {
     <section id="trabajos" className="section">
       <div className="sectionHead">
         <h2>Nuestro trabajo.</h2>
-        <p>Estamos preparando esta sección. Pronto vas a ver acá proyectos reales.</p>
+        <p>Algunos sitios que diseñamos. Tocá cualquiera para verlo funcionando.</p>
       </div>
       <div className={styles.grid}>
         {TRABAJOS.map((trabajo, index) => (
